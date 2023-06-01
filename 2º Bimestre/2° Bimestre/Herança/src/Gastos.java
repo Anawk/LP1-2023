@@ -1,13 +1,11 @@
-public abstract class Gastos {
+public abstract class  Gastos {
     private String nome;
-    private double valor;
+    double valor;
 
-
-    public Gastos(String nome, double valor){
+    public Gastos(String nome, double valorInicial) {
         this.nome = nome;
-        this.valor = valor;
+        this.valor = valorInicial;
     }
-
 
     public String getNome() {
         return nome;
@@ -25,11 +23,9 @@ public abstract class Gastos {
         this.valor = valor;
     }
 
+    //constrtores, getters e setters
 
-
-    public void mudarvalor (double valorN){
-        this.valor= valorN;
+    public void mudarvalor(double valorNovo){
+        this.valor= valorNovo;
     }
-
-    public abstract void mudarValor(double valor);
 }

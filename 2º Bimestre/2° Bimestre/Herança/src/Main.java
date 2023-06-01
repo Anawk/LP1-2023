@@ -1,5 +1,6 @@
 public class Main {
     public static void main(String[] args) {
+
         Fixo conta1 = new Fixo("conta de água", 120.90);
         Fixo conta2 = new Fixo("conta de luz", 340.87);
         Fixo conta3 = new Fixo("Telefone", 100.00);
@@ -39,6 +40,4 @@ public class Main {
         System.out.println("Valor da conta: R$"+ tenis.getValor());
         System.out.println("Quantidade de parcelas: "+ tenis.getTempoMeses());
     }
-
-    }
-
+}
