@@ -1,0 +1,47 @@
+package Calendar;
+import java.text.SimpleDateFormat;
+import java.util.*;
+
+public class Lembrete {
+    private String descricao;
+    private Date dataHora;
+
+    public Lembrete() {
+        this.descricao = descricao;
+        this.dataHora = dataHora;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public Date getDataHora() {
+        return dataHora;
+    }
+
+    public void setDataHora(Date dataHora) {
+        this.dataHora = dataHora;
+    }
+
+    public boolean ocorreNaData(Date data) {
+        Calendar calLembrete = Calendar.getInstance();
+        calLembrete.setTime(dataHora);
+
+        Calendar calData = Calendar.getInstance();
+        calData.setTime(data);
+
+        return calLembrete.get(Calendar.YEAR) == calData.get(Calendar.YEAR)
+                && calLembrete.get(Calendar.MONTH) == calData.get(Calendar.MONTH)
+                && calLembrete.get(Calendar.DAY_OF_MONTH) == calData.get(Calendar.DAY_OF_MONTH);
+    }
+
+    @Override
+    public String toString() {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+        return "Lembrete: " + descricao + " - Data/Hora: " + dateFormat.format(dataHora);
+    }
+}
